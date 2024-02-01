@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://skonuoktuu7s"]
+
+[ext_resource type="Texture2D" uid="uid://c6xqsp04u64vc" path="res://Player/ryo (2).png" id="1_djv88"]
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_p0t3f"]
+[ext_resource type="Texture2D" uid="uid://d3kernqc0qnej" path="res://Player/PlayerHitboxIcon.png" id="2_yi73y"]
+[ext_resource type="Script" path="res://Player/PlayerSprite.gd" id="3_6d5k8"]
+[ext_resource type="Script" path="res://Player/PlayerHitboxIcon.gd" id="4_dlw8y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oeux4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0vax6"]
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(3, 3)
+up_direction = Vector2(0.577292, 0.816538)
+slide_on_ceiling = false
+script = ExtResource("1_p0t3f")
+
+[node name="PlayerSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_djv88")
+offset = Vector2(1, -1)
+script = ExtResource("3_6d5k8")
+
+[node name="PlayerHitbox" type="CollisionShape2D" parent="."]
+scale = Vector2(0.3, 0.3)
+shape = SubResource("CircleShape2D_oeux4")
+
+[node name="PlayerHitboxIcon" type="Sprite2D" parent="PlayerHitbox"]
+scale = Vector2(0.675676, 0.675676)
+texture = ExtResource("2_yi73y")
+script = ExtResource("4_dlw8y")
+
+[node name="PlayerNearMissHitbox" type="CollisionShape2D" parent="."]
+visible = false
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CircleShape2D_0vax6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
