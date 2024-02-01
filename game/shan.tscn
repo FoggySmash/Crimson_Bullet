@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddjg8ibkylja5"]
+
+[ext_resource type="Script" path="res://shan.gd" id="1_gv67r"]
+[ext_resource type="Texture2D" uid="uid://yeimafq0mxug" path="res://test/ooo yeaah.jpg" id="2_jc8kh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ahbto"]
+radius = 538.516
+
+[node name="shan" type="CharacterBody2D"]
+scale = Vector2(0.01, 0.01)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_gv67r")
+
+[node name="OooYeaah" type="Sprite2D" parent="."]
+position = Vector2(0, -1.90735e-06)
+scale = Vector2(0.339947, 0.335813)
+texture = ExtResource("2_jc8kh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ahbto")
